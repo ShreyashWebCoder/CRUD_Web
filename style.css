@@ -5,9 +5,9 @@
     font-family: 'Segoe UI';
 }
 
-body {
+/* body {
     background-color: #434141;
-}
+} */
 
 /* Common CSS  */
 .container_fluid {
@@ -84,10 +84,11 @@ body {
     transition: all ease 1s;
 }
 
-.header>.header_upper>button:hover{
+.header>.header_upper>button:hover {
     transform: scale(1.1);
 
 }
+
 /* Banner Info  */
 .banner_info {
     width: 40%;
@@ -227,7 +228,7 @@ tbody>tr:nth-child(odd) {
 }
 
 
-
+/* ...............................................................  */
 /* Movies Filter  */
 .filter_box {
     width: 25%;
@@ -261,7 +262,7 @@ tbody>tr:nth-child(odd) {
 
 }
 
-.movie_inp>b>input {
+.movie_inp>input {
     width: 100%;
     height: 30px;
     margin-bottom: 10px;
