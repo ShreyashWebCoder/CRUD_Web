@@ -16,7 +16,7 @@
         <div class="header">
             <div class="header_upper">
                 <h1>Movies</h1>
-                <button onclick="addMovie()">
+                <button onclick="openAddMovieModal()">
                     Create New Movie
                     <div class="dash">
                         <hr>
@@ -50,40 +50,43 @@
     </section>
 
 
-    <!-- Filter Box  -->
-    <div class=" filter_box" id="filter_box">
-        <div class="filter_container" id="addModal">
-            <h1 style="color: white; text-align: center;"> Add New Movies</h1>
 
-            <form class="movie_inp">
-                <b>Title<input type="text" placeholder="Enter Title" id="" required></b>
-                <b>Genres<input type="text" placeholder="Enter Genres" id="" required></b>
-                <b>Duration<input type="text" placeholder="Enter Duration" id="" required></b>
-                <b>Release Date<input type="text" placeholder="Enter Release Date" id="add_releaseDate"
-                        onclick="changeReleaseDate()" required></b>
-                <b>Actors Name<input type="text" placeholder="Enter Actors Name" id="" required></b>
-                <b>IMDB Rating<input type="text" placeholder="Enter IMDB Rating" id="" required></b>
-                <b>Poster URL<input type="text" placeholder="Enter Poster URL" id="" class="movie_inp_bg" required></b>
-                <b>StoryLine <br><textarea id="" cols="30" rows="4" class="movie_inp_bg" placeholder="Enter Story-Line"
-                        required></textarea></b>
-                <button onclick="closeModal()">Add Movie</button>
-            </form>
+    <!-- Add Movie Modal  -->
+    <div class="view_modal" id="addModal">
+        <div class="view_modal_container">
 
+            <div class="closed_modal">
+                <i class="fa-solid fa-circle-xmark" onclick="closeModal('addModal')"></i>
+            </div>
+
+            <div class="movie_details" style=" flex-direction: column;">
+                <h1>Add New Movies</h1>
+
+                <form class="movie_inp" id="addMovieFormID">
+                    Title<input type="text" placeholder="Enter Title" id="addMovieTitle" required>
+                    Genres<input type="text" placeholder="Enter Genres" id="addMovieGenres" required>
+                    Duration<input type="text" placeholder="Enter Duration" id="addMovieDuration" required>
+                    Release Date<input type="text" placeholder="Enter Release Date" id="add_releaseDate"
+                        onclick="changeReleaseDate()" required>
+                    Actors Name<input type="text" placeholder="Enter Actors Name" id="addMovieActors" required>
+                    IMDB Rating<input type="text" placeholder="Enter IMDB Rating" id="addMovieIMDB" required>
+                    Poster URL<input type="text" placeholder="Enter Poster URL" id="addMoviePosterURL"
+                        class="movie_inp_bg" required>
+                    StoryLine <br><textarea id="addMovieStoryLine" cols="30" rows="4" class="movie_inp_bg"
+                        placeholder="Enter Story-Line" required></textarea>
+                    <button onclick="createMovie()">Add Movie</button>
+                </form>
+            </div>
 
         </div>
     </div>
-
-    <!-- Add Movie Modal  -->
-    <!-- <div class="view_modal">
-
-    </div> -->
 
 
     <!-- Movies Modal -->
     <div class="view_modal" id="modal">
         <div class="view_modal_container">
             <div class="close_modal">
-                <i class="fa-solid fa-circle-xmark" onclick="closeModal()"></i>
+                <i class="fa-solid fa-circle-xmark" onclick="closeModal('modal')"></i>
             </div>
 
             <!-- Movie Details  -->
@@ -114,7 +117,6 @@
                         <p>1993-11-12</p>
                     </div>
                     <div>
-                        <h3>Duration</h3>
                         <p id="movie_duration"></p>
                     </div>
                     <div>
@@ -148,7 +150,7 @@
                         <th>Genres</th>
                         <th>Duration</th>
                         <th>IMDB Rating</th>
-                        <th>Years</th>
+
                         <th>Actions</th>
 
                     </tr>
@@ -163,18 +165,12 @@
 
 
 
-    <!-- Footer Movies Section  -->
-    <footer class="container_fluid footer">
-        <div class="footer_container">
-
-        </div>
-    </footer>
 
 
 
 
     <script src="./main.js"></script>
-    <script src="./data.js"></script>
+    <!-- <script src="./data.js"></script> -->
 </body>
 
 </html>
